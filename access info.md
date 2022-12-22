@@ -129,7 +129,7 @@ add source code
 ```
 add source code
 ```
-6. rolling update (vs Blue/Green, Canary)
+6. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)
 ```
 add source code
 ```
