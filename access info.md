@@ -48,11 +48,11 @@
     ```
 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - pod 생성하기
-    - 방법1.  yaml 파일 활용  
-
-
-    (1) yaml 파일 작성
-    [nginx-pod.yaml]
+    방법1. yaml 파일 활용  
+    
+    
+    (1) yaml 파일 작성  
+    ###### [nginx-pod.yaml]
     ```
     apiVersion: v1
     kind: Pod
@@ -69,7 +69,7 @@
     ```
     kubectl apply -f nginx-pod.yaml
     ```
-    - 방법2.  Command Line Tool 활용
+    방법2. Command Line Tool 활용
     ```
     # kubectl run <pod명> --image=<image명> --port=<port번호>
     kubectl run nginx-pod --image=nginx --port=80
@@ -79,19 +79,23 @@
     kubectl get pods
     ```
   - Service 생성하기
-    - (1) yaml 파일 작성
-      [nginx-svc.yaml]
-      ```
-      add source code
-      ```
-    - (2) service 배포
+    (1) yaml 파일 작성  
+    
+    
+    ###### [nginx-svc.yaml]
+    ```
+    add source code
+    ```
+    (2) service 배포
     ```
     kubectl apply -f nginx-svc.yaml
     ```
     - 참고  
 
 
-      **Service type**
+      **Service type**  
+      
+      
       ⊙ ClusterIP  
       
       
