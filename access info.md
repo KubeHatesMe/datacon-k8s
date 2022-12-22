@@ -92,10 +92,10 @@
 
 
       **Service type**
-      - ClusterIP
-      - NodePort
-      - LoadBalancer
-      - *ExternalName*
+      ⊙ ClusterIP
+      ⊙ NodePort
+      ⊙ LoadBalancer
+      ⊙ *ExternalName*
       
   - Replica Set 생성하기
   - Deployment 생성하기
