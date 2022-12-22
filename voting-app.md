@@ -93,7 +93,7 @@
       image: dockersamples/examplevotingapp_worker  
   ```     
 
-<
+
 **2. Service yaml (voting-app, result-app, redis, postgres) yaml 작성**
   
   
