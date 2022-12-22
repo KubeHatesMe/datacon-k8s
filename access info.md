@@ -21,19 +21,27 @@
   - namespace 구분
   - pod 확인 (예시로 미리 생성해놓기)
     - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
-```
-add source code
-```
-  - node 확인
-    - kubectl get nodes
-```
-add source code
-```
-  - pod 삭제
-    - kubectl delete pod (pod name)
-```
-add source code
-```
+    - 각 namespace 별 pod 확인
+    ```
+    kubectl get pods -n <namespace명>
+    ```
+    - 모든 namespace에 있는 pod 확인
+    ```
+    kubectl get pods --all-namespaces
+    ```
+    - pod 상세 정보 출력
+    ```
+    kubectl get pods -n <namespace명> -o wide
+    ```
+    - node 확인
+    ```
+    kubectl get nodes
+    ```
+    - pod 삭제
+    ```
+    kubectl delete pod <pod명> -n <namespace명>
+    kubectl get pods -n <namespace명> #삭제된 결과 조회
+    ```
 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - Command Line 활용
 ```
