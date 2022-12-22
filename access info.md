@@ -157,9 +157,29 @@
   ```
   - Deployment 생성하기
   ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로)
-```
-add source code
-```
+  ```
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: my-nginx-deployment
+    labels:
+      app: nginx
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: nginx
+    template:                  #여기서부터,, 써야되는 건지,,? pod.yaml 배포했으면 필요없는건지?
+      metadata:
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx:1.14.0
+          ports:
+          - containerPort: 80
+  ```
 3. (label and selectors, taints and tolerations)
 ```
 add source code
