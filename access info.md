@@ -120,7 +120,7 @@
       
       ⊙ NodePort  
       ###### nodePort, port, targetPort 이해
-      https://dz2cdn1.dzone.com/storage/temp/14848977-nodeport.jpg
+      ![](https://dz2cdn1.dzone.com/storage/temp/14848977-nodeport.jpg)
       
       ⊙ LoadBalancer  
       
