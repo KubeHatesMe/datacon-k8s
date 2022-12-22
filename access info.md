@@ -59,11 +59,13 @@
     apiVersion: v1
     kind: Pod
     metadata:
-      name: nginx
+      name: my-nginx
+      labels:             # labels 값이
+        app: nginx        # service의 selector 값과 일치해야 함 
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name: my-nginx
+        image: nginx:1.14.0
         ports:
         - containerPort: 80
     ```
@@ -88,7 +90,17 @@
     
     ###### [nginx-svc.yaml]
     ```
-    add source code
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-nginx-svc
+    spec:
+      selector:           # service의 대상이 되는 오브젝트의
+        app: nginx        # label값과 일치해야 함
+      ports:
+      - port: 80
+        protocol: TCP
+
     ```
     (2) service 배포
     ```
