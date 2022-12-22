@@ -14,8 +14,8 @@
 - (이름) : (ip주소)
 - (이름) : (ip주소)
 
-#####Kubernetes 실습 가이드
-######EC2로 클러스터 만들고, namespace로 구분하는 방식으로! 도커 이미지는 미리 github에 올려놓기
+##### Kubernetes 실습 가이드
+###### EC2로 클러스터 만들고, namespace로 구분하는 방식으로! 도커 이미지는 미리 github에 올려놓기
 
 1. 기본적인 명령어 사용
   - namespace 구분
