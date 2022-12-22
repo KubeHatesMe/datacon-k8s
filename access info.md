@@ -78,7 +78,25 @@
     ```
     kubectl get pods
     ```
-  - yaml파일 활용
+  - Service 생성하기
+    - (1) yaml 파일 작성
+      [nginx-svc.yaml]
+      ```
+      add source code
+      ```
+    - (2) service 배포
+    ```
+    kubectl apply -f nginx-svc.yaml
+    ```
+    - 참고
+      **Service type**
+      - ClusterIP
+      - NodePort
+      - LoadBalancer
+      - ExternalName
+      
+  - Replica Set 생성하기
+  - Deployment 생성하기
 ```
 add source code
 ```
