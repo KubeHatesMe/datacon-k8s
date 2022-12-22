@@ -42,6 +42,10 @@
     kubectl delete pod <pod명> -n <namespace명>
     kubectl get pods -n <namespace명> #삭제된 결과 조회
     ```
+    - 기본 namespace 변경
+    ```
+    kubectl config set-context --current --namespace=<namespace명>
+    ```
 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - Command Line 활용
 ```
