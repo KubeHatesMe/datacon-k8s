@@ -95,6 +95,8 @@
   
   
   **2. Service yaml (voting-app, result-app, redis, postgres) yaml 작성**
+  
+  
 ▼ [voting-app-service.yaml]
 ```
 apiVersion: v1
