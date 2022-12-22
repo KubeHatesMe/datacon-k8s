@@ -172,7 +172,6 @@ spec:
      app: demo-voting-app
 ```
 
-
-  
-  
+**3. [Advanced] 안정성? 가용성?을 위해 deployment 배포**
+https://countrymouse.tistory.com/entry/k8s-11
   
