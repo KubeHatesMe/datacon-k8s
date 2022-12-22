@@ -133,12 +133,12 @@ add source code
 ```
 add source code
 ```
-7. voting-app 실습 (https://wefree.tistory.com/87)
+7. voting-app 실습 - MSA 개념 설명 (https://wefree.tistory.com/87)
 
     [voting-app 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/voting-app.md)   
 
 
-8. [advanced] Istio - bookinfo 
+8. [advanced] Istio - bookinfo - Service mesh 였나? 개념 
 
 ```
 add source code
