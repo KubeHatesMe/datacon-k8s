@@ -92,9 +92,15 @@
 
 
       **Service type**
-      ⊙ ClusterIP
-      ⊙ NodePort
-      ⊙ LoadBalancer
+      ⊙ ClusterIP  
+      
+      
+      ⊙ NodePort  
+      
+      
+      ⊙ LoadBalancer  
+      
+      
       ⊙ *ExternalName*
       
   - Replica Set 생성하기
