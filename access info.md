@@ -88,12 +88,14 @@
     ```
     kubectl apply -f nginx-svc.yaml
     ```
-    - 참고
+    - 참고  
+
+
       **Service type**
       - ClusterIP
       - NodePort
       - LoadBalancer
-      - ExternalName
+      - *ExternalName*
       
   - Replica Set 생성하기
   - Deployment 생성하기
