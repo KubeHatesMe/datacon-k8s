@@ -80,7 +80,9 @@
     ```
     kubectl get pods
     ```
-  - Service 생성하기
+  - Service 생성하기  
+
+
     (1) yaml 파일 작성  
     
     
