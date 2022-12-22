@@ -128,6 +128,33 @@
       ⊙ *ExternalName*
       
   - Replica Set 생성하기
+  ```
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    name: my-nginx-rs
+    labels:
+      app: nginx
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: nginx
+        
+   #까지만 해도 되나,,? 아님 밑에
+    template:
+       metadata:
+          name: my-nginx
+          labels:             # labels 값이
+            app: nginx        # service의 selector 값과 일치해야 함 
+        spec:
+          containers:
+          - name: my-nginx
+            image: nginx:1.14.0
+            ports:
+            - containerPort: 80
+   # 또 추가해줘야 하나,,,?
+  ```
   - Deployment 생성하기
   ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로)
 ```
