@@ -97,8 +97,11 @@
     spec:
       selector:           # service의 대상이 되는 오브젝트의
         app: nginx        # label값과 일치해야 함
+      type: NodePort      # service type: Nodeport
       ports:
-      - port: 80
+      - nodePort: 31000   # 외부 접속 시 사용하는 port 번호
+        port: 8080        # Cluster 내부에서 사용하는 service 객체의 port 번호
+        targetPort: 80    # service-> pod 로 전달 시 사용하는 port 번호
         protocol: TCP
 
     ```
@@ -116,7 +119,8 @@
       
       
       ⊙ NodePort  
-      
+      ###### nodePort, port, targetPort 이해
+      https://dz2cdn1.dzone.com/storage/temp/14848977-nodeport.jpg
       
       ⊙ LoadBalancer  
       
