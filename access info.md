@@ -61,7 +61,7 @@ add source code
 ```
 7. voting-app 실습 (https://wefree.tistory.com/87)
 ```
-[voting-app 실습 가이드](https://countrymouse.tistory.com/entry/k8s-11)
+[voting-app 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/voting-app.md))
 ```
 8. [advanced] Istio - bookinfo 
 
