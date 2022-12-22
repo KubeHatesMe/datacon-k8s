@@ -47,10 +47,21 @@
     kubectl config set-context --current --namespace=<namespace명>
     ```
 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
-  - Command Line 활용
-```
-add source code
-```
+  - pod 생성하기
+    - 방법1. yaml 파일 활용
+    [nginx-pod.yaml]
+    ```
+    add source code
+    ```
+    - 방법2. Command Line Tool 활용
+    ```
+    # kubectl run <pod명> --image=<image명>
+    kubectl run nginx-pod --image=nginx
+    ```
+    - 결과 조회
+    ```
+    kubectl get pods
+    ```
   - yaml파일 활용
 ```
 add source code
