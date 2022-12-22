@@ -48,7 +48,9 @@
     ```
 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - pod 생성하기
-    - 방법1.  yaml 파일 활용
+    - 방법1.  yaml 파일 활용  
+
+
     (1) yaml 파일 작성
     [nginx-pod.yaml]
     ```
