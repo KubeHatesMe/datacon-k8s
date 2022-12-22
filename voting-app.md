@@ -3,7 +3,7 @@
 
 1. Pod yaml (voting-app, result-app, redis, db, worker) 작성
 
-[voting-app-pod.yaml]
+▼ [voting-app-pod.yaml]
   ```
   apiVersion: v1
   kind: Pod
@@ -20,7 +20,7 @@
        - containerPort: 80
   ```
   
-[result-app-pod.yaml]
+▼ [result-app-pod.yaml]
   ```
   apiVersion: v1
   kind: Pod
@@ -37,7 +37,7 @@
        - containerPort: 80
   ```
   
-[redis-pod.yaml]
+▼ [redis-pod.yaml]
   ```
   apiVersion: v1
   kind: Pod
@@ -54,7 +54,7 @@
        - containerPort: 6379
   ```
   
-[postgres-pod.yaml]
+▼ [postgres-pod.yaml]
   ```
   apiVersion: v1
   kind: Pod
@@ -78,7 +78,7 @@
        - containerPort: 5432
   ```
   
-[worker-app-pod.yaml]
+▼ [worker-app-pod.yaml]
   ```
   apiVersion: v1
   kind: Pod
