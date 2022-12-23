@@ -192,7 +192,8 @@ add source code
 
     [Prometheus & Grafana 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Prometheus%20%26%20Grafana.md)
     
-6. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)
+6. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)  
+
     [rolling update 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/rolling%20update.md)  
     
 7. voting-app 실습 - MSA 개념 설명 (https://wefree.tistory.com/87)
