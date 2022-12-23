@@ -16,7 +16,7 @@
 
 ### 실습
 ----
-1. nginx-roll.yaml 파일 생성  
+**1. nginx-roll.yaml 파일 생성**  
     ###### ▼ [nginx-roll.yaml]
     ```
     apiVersion: apps/v1
@@ -42,28 +42,28 @@
             - containerPort: 80
     ```
 
-2. deployment 배포 & 확인
+**2. deployment 배포 & 확인**
     ```
     kubectl apply -f nginx-roll.yaml
     kubectl get deployment
     ```
     
-3. replicaset 확인
+**3. replicaset 확인**
     ```
     kubectl get rs
     ```
     
-4. pod 확인
+**4. pod 확인**
     ```
     kubectl get pods
     ```
     
-5. Rolling Update 수행 : 이미지 버전 바꾸기
+**5. Rolling Update 수행 : 이미지 버전 바꾸기**
     ```
     kubectl set image deployment nginx-deployment nginx=nginx:1.14.2 --record
     ```
     
- 6. Rollout status 확인
+ **6. Rollout status 확인**
     ```
     kubectl rollout status deployment nginx-deployment
     ```
@@ -72,15 +72,15 @@
     kubectl describe deployment nginx-deployment
     ```
     
- 7. 이전 버전으로 Rollback 시키기
+ **7. 이전 버전으로 Rollback 시키기**
     ```
     kubectl rollout history deployment nginx-deployment
     ```
-    - REVISION 확인 후, 원하는 REVISION으로 Rollback (여기선 revision=1로)
+    REVISION 확인 후, 원하는 REVISION으로 Rollback (여기선 revision=1로)
     ```
     kubectl rollout undo deployment nginx-deployment --to-revision=1
     ```
-    - pod 확인해보면 새 버전은 terminate 되고, 이전 버전의 pod가 생성되는 걸(Rollback) 확인할 수 있음
+    pod 확인해보면 새 버전은 terminate 되고, 이전 버전의 pod가 생성되는 걸(Rollback) 확인할 수 있음
     ```
     kubectl get pods
     ```
