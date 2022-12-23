@@ -184,14 +184,14 @@
 ```
 add source code
 ```
-4. ingress
+4. Volume
 ```
 add source code
 ```
-5. monitoring
-```
-add source code
-```
+5. monitoring (Prometheus & Grafana)  
+
+    [Prometheus & Grafana 실습 가이드]()
+    
 6. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)
 ```
 add source code
@@ -201,7 +201,7 @@ add source code
     [voting-app 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/voting-app.md)   
 
 
-8. [advanced] Istio - bookinfo - Service mesh 였나? 개념 
+8. [advanced] Istio - bookinfo - Service mesh
 
 ```
 add source code
