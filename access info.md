@@ -190,7 +190,7 @@ add source code
 ```
 5. monitoring (Prometheus & Grafana)  
 
-    [Prometheus & Grafana 실습 가이드]()
+    [Prometheus & Grafana 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Prometheus%20%26%20Grafana.md)
     
 6. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)
 ```
