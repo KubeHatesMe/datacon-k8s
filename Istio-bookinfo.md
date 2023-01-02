@@ -13,6 +13,7 @@
 
 ### 실습
 ---
+(helm은 이미 설치되어있다는 가정 하에 진행)
 1. Istio 다운로드 및 설치
     ```
     curl -L https://istio.io/downloadIstio | sh -
