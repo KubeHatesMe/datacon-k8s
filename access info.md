@@ -270,7 +270,5 @@ add source code
 
 8. [advanced] Istio - bookinfo - Service mesh (https://bcho.tistory.com/1297)
 
-```
-add source code
-```
+    [Istio - bookinfo 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Istio-bookinfo.md)
 
