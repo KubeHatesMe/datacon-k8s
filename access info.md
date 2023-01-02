@@ -189,12 +189,19 @@ add source code
 4. Volume
 
     (1) hostpath로 사용할 경로 생성
+        Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
     ```
-    ex) mkdir 어찌고 저찌고
-    ```  
-  
-  
-    (2) Deployment(hostPath Volume 지정)와 Service 배포
+    ex) sudo mkdir /mnt/data
+    ```   
+    
+    (2) 만든 경로에 index.html 파일 생성 및 확인
+    ```
+    sudo sh -c "echo 'Hello from Kubernetes storage' > /mnt/data/index.html"
+    cat /mnt/data/index.html #결과: Hello from Kubernetes stroage
+    ```
+    
+    
+    (3) Deployment(hostPath Volume 지정)와 Service 배포
     ###### [nginx-dp-vol.yaml]
     ```
     apiVersion: apps/v1
@@ -222,7 +229,7 @@ add source code
           volumes:
           - name: shared-data
             hostPath:
-              path: /home/yoon/Workspace/k8sstudy/shared  # 경로  변경 필요 
+              path: /mnt/data  # 경로  변경 필요 
               type: Directory
 
     ---
@@ -242,8 +249,10 @@ add source code
         name: http
       selector:
         app: nginx
-    ```  
-  
+    ```   
+    
+    
+    (4) 브라우저에 접속하여 페이지 출력 결과 확인
   
   
 5. monitoring (Prometheus & Grafana)  
