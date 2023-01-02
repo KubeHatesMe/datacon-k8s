@@ -84,4 +84,4 @@
     
     <http://localhost:20001:kiali> #port번호는 동일한건가 모르겠네. 실습해보고 수정하기
     ```
-    브라우저에서 kiali dashboard 열어 왼쪽에 Graph 
+    브라우저에서 kiali dashboard 열어 왼쪽에 Graph 메뉴 클릭 후, book info의 트래픽 구조, 트래픽 흐름 등 확인
