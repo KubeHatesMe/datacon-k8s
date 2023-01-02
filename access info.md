@@ -186,61 +186,61 @@ add source code
 ```
 4. Volume
 
-  (1) hostpath로 사용할 경로 생성
-  ```
-  ex) mkdir 어찌고 저찌고
-  ```  
+    (1) hostpath로 사용할 경로 생성
+    ```
+    ex) mkdir 어찌고 저찌고
+    ```  
   
   
-  (2) Deployment(hostPath Volume 지정)와 Service 배포
-  ###### [nginx-dp-vol.yaml]
-  ```
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: nginx-deployment-volume
-  spec:
-    selector:
-      matchLabels:
-        app: nginx
-    replicas: 1
-    template:
-      metadata:
-        labels:
+    (2) Deployment(hostPath Volume 지정)와 Service 배포
+    ###### [nginx-dp-vol.yaml]
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment-volume
+    spec:
+      selector:
+        matchLabels:
           app: nginx
-      spec:
-        containers:
-        - name: nginx
-          image: nginx:1.14.2
-          ports:
-          - containerPort: 80
-          volumeMounts:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+          - name: nginx
+            image: nginx:1.14.2
+            ports:
+            - containerPort: 80
+            volumeMounts:
+            - name: shared-data
+              mountPath: /usr/share/nginx/html
+          volumes:
           - name: shared-data
-            mountPath: /usr/share/nginx/html
-        volumes:
-        - name: shared-data
-          hostPath:
-            path: /home/yoon/Workspace/k8sstudy/shared  # 경로  변경 필요 
-            type: Directory
+            hostPath:
+              path: /home/yoon/Workspace/k8sstudy/shared  # 경로  변경 필요 
+              type: Directory
 
-  ---
+    ---
 
-  apiVersion: v1
-  kind: Service
-  metadata:
-    name: nginx
-    labels:
-      app: nginx
-  spec:
-    type: NodePort
-    ports:
-    - port: 8080
-      targetPort: 80
-      protocol: TCP
-      name: http
-    selector:
-      app: nginx
-  ```  
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      type: NodePort
+      ports:
+      - port: 8080
+        targetPort: 80
+        protocol: TCP
+        name: http
+      selector:
+        app: nginx
+    ```  
   
   
   
