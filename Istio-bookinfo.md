@@ -78,3 +78,10 @@
 
     
 7. addon으로 kiali 설치해서, kiali 대시보드 살펴보기
+    ```
+    #kubectl apply -f samples/addons #(없어도 실행될 수도 있을 거 같음)
+    istioctl dashboard kiali
+    
+    <http://localhost:20001:kiali> #port번호는 동일한건가 모르겠네. 실습해보고 수정하기
+    ```
+    브라우저에서 kiali dashboard 열어 왼쪽에 Graph 
