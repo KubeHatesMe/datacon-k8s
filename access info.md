@@ -108,7 +108,14 @@
     (2) service 배포
     ```
     kubectl apply -f nginx-svc.yaml
+    ```  
+    
+    (3) 브라우저 접속 및 확인
     ```
+    kubectl get nodes -o wide # 출력 결과 중 node의 <internal-IP> 값 확인
+    ```
+    브라우저 열어 <internal-ip>:<nodeport>에 접속하여 
+    
     - 참고  
 
 
