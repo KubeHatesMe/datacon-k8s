@@ -180,7 +180,7 @@
     selector:
       matchLabels:
         app: nginx
-    template:                  #여기서부터,, 써야되는 건지,,? pod.yaml 배포했으면 필요없는건지?
+    template:                  
       metadata:
         labels:
           app: nginx
