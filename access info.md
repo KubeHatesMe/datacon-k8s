@@ -158,7 +158,7 @@
           name: my-nginx
           labels:             # labels 값이
             app: nginx        # service의 selector 값과 일치해야 함 
-        spec:
+       spec:
           containers:
           - name: my-nginx
             image: nginx:1.14.0
