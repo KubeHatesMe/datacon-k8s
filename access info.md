@@ -114,7 +114,10 @@
     ```
     kubectl get nodes -o wide # 출력 결과 중 node의 <internal-IP> 값 확인
     ```
-    브라우저 열어 <internal-ip>:<nodeport>에 접속하여 
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/svc-nodeip.JPG?raw=true)  
+    
+    
+    브라우저 열어 <internal-ip>:<nodeport>에 접속하여 출력 화면 확인
     
     - 참고  
 
