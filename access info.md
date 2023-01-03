@@ -117,7 +117,7 @@
     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/svc-nodeip.JPG?raw=true)  
     
     
-    브라우저 열어 (internal-ip 주소):(<nodeport값) 으로 접속하여 출력 화면 확인
+    브라우저 열어 (internal-ip 주소):(nodeport값) 으로 접속하여 출력 화면 확인
     ![](https://user-images.githubusercontent.com/88528515/210319563-204cdb2d-08e4-4ab3-8d8d-7ee27b4f3f95.png)
 
     
