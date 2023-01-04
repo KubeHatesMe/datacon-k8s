@@ -117,7 +117,8 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-  type: LoadBalancer
+    nodePort: 30004
+  type: NodePort
   selector:
      name: voting-app-pod
      app: demo-voting-app
@@ -133,10 +134,11 @@ metadata:
     name: result-service
     app: demo-result-app
 spec:
-  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
+    nodePort: 30005
+  type: NodePort
   selector:
      name: result-app-pod
      app: demo-voting-app
