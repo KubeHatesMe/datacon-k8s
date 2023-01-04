@@ -4,13 +4,13 @@
 **1. Pod yaml (voting-app, result-app, redis, postgres, worker) 작성**
 
 ▼ [voting-app-pod.yaml]
-  ```
   #### Voting-App 실습 가이드
 ----
 
 **1. Pod yaml (voting-app, result-app, redis, postgres, worker) 작성**
 
-▼ [voting-app-pod.yaml]
+▼ [voting-app-pod.yaml]  
+
   ```
   apiVersion: v1
   kind: Pod
