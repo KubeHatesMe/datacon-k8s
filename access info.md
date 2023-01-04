@@ -238,7 +238,7 @@ add source code
           volumes:
           - name: shared-data
             hostPath:
-              path: /home/(Username)/vol-mount  # 경로  변경 필요 
+              path: /home/(Username)/vol-mount  
               type: Directory
 
     ---
