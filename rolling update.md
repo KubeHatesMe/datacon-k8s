@@ -89,10 +89,13 @@
     REVISION 확인 후, 원하는 REVISION으로 Rollback (여기선 revision=1로)
     
     ```
-    kubectl rollout undo deployment nginx-deployment --to-revision=1
+    # 기존 pod가 삭제되고, 새로 생성되는 과정을 보고 싶으면 터미널을 새로 한 개 더 열어 아래 명령어 실행
+    # watch kubectl get pods
+    # (만약 minikube 환경이라면 watch minikube kubectl get pods)
+    kubectl rollout undo deployment nginx-deployment --to-revision=1 # 기존 터미널 창에서 실행
     ```
     
-    pod 확인해보면 새 버전은 terminate 되고, 이전 버전의 pod가 생성되는 걸(Rollback) 확인할 수 있음
+    pod 확인해보면 새 버전은 terminate 되고, 이전 버전 이미지의 pod가 생성되는 걸(Rollback) 확인할 수 있음
     
     ```
     kubectl get pods
