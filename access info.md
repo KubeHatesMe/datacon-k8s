@@ -200,13 +200,13 @@ add source code
     (1) hostpath로 사용할 경로 생성
         Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
     ```
-    ex) sudo mkdir /mnt/data
+    sudo mkdir vol-mount
     ```   
     
     (2) 만든 경로에 index.html 파일 생성 및 확인
     ```
-    sudo sh -c "echo 'Hello from Kubernetes storage' > /mnt/data/index.html"
-    cat /mnt/data/index.html #결과: Hello from Kubernetes stroage
+    sudo sh -c "echo 'Hello from Kubernetes storage' > vol-mount/index.html"
+    cat vol-mount/index.html #결과: Hello from Kubernetes stroage
     ```
     
     
@@ -238,7 +238,7 @@ add source code
           volumes:
           - name: shared-data
             hostPath:
-              path: /mnt/data  # 경로  변경 필요 
+              path: /home/(Username)/vol-mount  # 경로  변경 필요 
               type: Directory
 
     ---
@@ -260,8 +260,25 @@ add source code
         app: nginx
     ```   
     
+    * if, minikube로 실행한 경우, 기존 minikube 클러스터는 삭제하고 (minikube delete) 마운트 명령어를 써서 minikube를 시작해야함.
+      ```
+      minikube start --mount --mount-string="/home/(Username)/vol-mount:/home/docker/vol-mount"
+      # "(source Directory - ex. 로컬 디렉토리):(target Directory - minikube 내 디렉토리)
+      ```
+      또한, deployment yaml 파일의 hostPath를 마운트한 minikube directory (/home/docker/vol-mount)로 바꿔주어야 함.
     
-    (4) 브라우저에 접속하여 페이지 출력 결과 확인
+    (4) Deployment, Service 배포
+    ```
+    kubectl apply -f nginx-dp-vol.yaml
+    ```  
+    
+    
+    (5) 브라우저에 접속 **(노드 ip):(접속 포트)**
+    ```
+    kubectl get svc nginx #출력 결과 중 PORT(S)에서 외부 접속 포트 확인
+    ```
+    
+    (6) 출력 결과가 작성한 index.html 내용을 잘 출력하는지 확인
   
   
 5. monitoring (Prometheus & Grafana)  
