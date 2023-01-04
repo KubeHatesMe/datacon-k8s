@@ -50,33 +50,33 @@ kubectl --namespace monitoring get pods -l "release=prometheus"
 ```
 kubectl port-forward service/prometheus-grafana 3000:80 --namespace monitoring
 ```
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana1.png?raw=true)
+![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana1.png?raw=true)
 
 - 로그인 화면 (계정: admin, pw: prom-operator)
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/grafana_login.png?raw=true)
+![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana_login.png?raw=true)
 
 - 왼쪽 메뉴에서 톱니바퀴 > datasource 클릭
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-datasource.png?raw=true)  
+![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-datasource.png?raw=true)  
 
 - datasource로 프로메테우스 선택
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-prometheus.png?raw=true)
+![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-prometheus.png?raw=true)
 
 - test 버튼 클릭
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-prometheus2.png?raw=true)
+![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-prometheus2.png?raw=true)
 
 - "datasource is working" 팝업창 뜨는지 확인
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-prometheus3.png?raw=true)
+![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-prometheus3.png?raw=true)
 
 - 대시보드 설정
   - https://grafana.com/grafana/dashboards 에서 마음에 드는 대시보드 선택 후 copy ID to clipboard 버튼 눌러 ID 복사
     (여기선 13332번 사용)
   - Dashboard > Import 클릭
-  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-prometheus4.png?raw=true)
+  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-prometheus4.png?raw=true)
   - import 할 dashboard 번호(13332) 입력 후 Load 버튼 클릭
-  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-prometheus5.png?raw=true)
+  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-prometheus5.png?raw=true)
   - prometheus datasource 선택 후 import 버튼 클릭
-  ![](https://raw.githubusercontent.com/KubeHatesMe/datacon-k8s/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-prometheus6.png)
+  ![](https://raw.githubusercontent.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-prometheus6.png)
   - Dashboard 출력 화면 예시
-  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/853bf85d8ecd0229901d75adbab67dacddfbb773/grafana-dashboard-done.png?raw=true)
+  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/grafana-dashboard-done.png?raw=true)
 
 - cf. Prometheus web UI 접속 : https://www.leafcats.com/339?category=701097 , https://freestrokes.tistory.com/149
