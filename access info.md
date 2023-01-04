@@ -114,7 +114,7 @@
     ```
     kubectl get nodes -o wide # 출력 결과 중 node의 <internal-IP> 값 확인
     ```
-    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/svc-nodeip.JPG?raw=true)  
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/svc-nodeip.JPG?raw=true)  
     
     
     브라우저 열어 (internal-ip 주소):(nodeport값) 으로 접속하여 출력 화면 확인
@@ -279,7 +279,7 @@ add source code
     ```
     
     (6) 출력 결과가 작성한 index.html 내용을 잘 출력하는지 확인
-    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/volume.png?raw=true)
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/volume.png?raw=true)
   
   
 5. monitoring (Prometheus & Grafana)  
