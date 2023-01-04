@@ -25,8 +25,9 @@
     kubectl label namespace default istio-injection=enabled   # 앱 배포할 때 자동으로 envoy sidecar proxy 
                                                               # 추가되도록 namespace label 추가                     
     ```
-    (1) istio-install
-    (2) istio-inject
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/istio-install.png?raw=true)
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/istio-inject.png?raw=true)
+
 2. BookInfo 예제 배포
     ```
     kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
@@ -36,30 +37,30 @@
     kubectl get services
     kubectl get pods
     ```
-    (3) apply-bookinfo
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/apply-bookinfo.png?raw=true)
     
    kubectl get pods 결과, 모든 pod의 READY 항목이 2/2가 될 때까지 기다린다. (시간이 좀 걸림. 인내심 요망)
-   (4) pods-done
+   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/pods-done.png?raw=true)
    
    * 만약, minikube 환경에서 pod가 그림과 같이 ImagePullBackOff 상태일 시, 아래 명령어를 통해 pull되지 못한 이미지를 pull한다.
-     (5) imgpullbackoff
+     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/imgpullbackoff.png?raw=true)
      ```
      minikube ssh docker pull (이미지 이름 - ex. docker.io/istio/examples-bookinfo-reviews-v1:1.17.0 )
      ```
-     (6) pull-cmd
+     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/pull-cmd.png?raw=true)
    
    잘 배포되었는지, 아래 명령어를 통해 확인
     ```
     kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
     ```
-    (7) simple
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/simple.png?raw=true)
     
 3. 외부 접속을 위해 istio ingress gateway 배포 및 확인
     ```
     kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
     istioctl analyze
     ```
-    (8) analyze
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/analyze.png?raw=true)
     
 4. ingress IP와 포트 설정
     ```
@@ -96,7 +97,7 @@ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressga
     echo "$INGRESS_PORT"
     echo "$SECURE_INGRESS_PORT"
     ```
-    (9) tunnel-bg
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/tunnel-bg.png?raw=true)
     
     
 5. Gateway URL 설정
@@ -108,12 +109,11 @@ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressga
     ```
     echo "$GATEWAY_URL"
     ```
-    
-    (10) bookinfo-url
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/bookinfo-url.png?raw=true)
 
 6. 웹페이지 접속
     브라우저 열고 http://$GATEWAY_URL/productpage 로 접속 시도
-    (11) bookinfo-webpage
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/bookinfo-webpage.png?raw=true)
 
     
 7. addon으로 kiali 설치해서, kiali 대시보드 살펴보기
@@ -123,8 +123,8 @@ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressga
     
     <http://localhost:20001:kiali>
     ```
-    (12) kiali-cmd
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/kiali-cmd.png?raw=true)
     
     브라우저에서 kiali dashboard 열어 왼쪽에 Graph 메뉴 클릭 후, book info의 트래픽 구조, 트래픽 흐름 등 확인
-    (13) kiali
-    (14) kiali2
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/kiali.png?raw=true)
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/kiali2.png?raw=true)
