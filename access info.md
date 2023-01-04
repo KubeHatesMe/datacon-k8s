@@ -279,6 +279,7 @@ add source code
     ```
     
     (6) 출력 결과가 작성한 index.html 내용을 잘 출력하는지 확인
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/volume.png?raw=true)
   
   
 5. monitoring (Prometheus & Grafana)  
