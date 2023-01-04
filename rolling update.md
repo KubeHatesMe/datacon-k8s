@@ -95,7 +95,7 @@
     # (만약 minikube 환경이라면 watch minikube kubectl get pods)
     kubectl rollout undo deployment nginx-deployment --to-revision=1 # 기존 터미널 창에서 실행
     ```
-    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/rollback 후 describe dp.png?raw=true)
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/rollback%20%ED%9B%84%20describe%20dp.png?raw=true)
     pod 확인해보면 새 버전은 terminate 되고, 이전 버전 이미지의 pod가 생성되는 걸(Rollback) 확인할 수 있음
     
     ```
