@@ -191,11 +191,8 @@
           ports:
           - containerPort: 80
   ```
-3. (label and selectors, taints and tolerations)
-```
-add source code
-```
-4. Volume
+
+3. Volume
 
     (1) hostpath로 사용할 경로 생성
         Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
@@ -282,20 +279,20 @@ add source code
     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/volume.png?raw=true)
   
   
-5. monitoring (Prometheus & Grafana)  
+4. monitoring (Prometheus & Grafana)  
 
     [Prometheus & Grafana 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Prometheus%20%26%20Grafana.md)
     
-6. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)  
+5. rolling update (vs Blue/Green, Canary) (https://phoenixnap.com/kb/kubernetes-rolling-update : v1의 nginx-test.yaml 파일의 이미지 버전 1.14.0으로 수정, v2껄 1.14.2로!  /  https://bcho.tistory.com/1266)  
 
     [rolling update 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/rolling%20update.md)  
     
-7. voting-app 실습 - MSA 개념 설명 (https://wefree.tistory.com/87)
+6. voting-app 실습 - MSA 개념 설명 (https://wefree.tistory.com/87)
 
     [voting-app 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/voting-app.md)   
 
 
-8. [advanced] Istio - bookinfo - Service mesh (https://bcho.tistory.com/1297)
+7. [advanced] Istio - bookinfo - Service mesh (https://bcho.tistory.com/1297)
 
     [Istio - bookinfo 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Istio-bookinfo.md)
 
