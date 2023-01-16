@@ -9,7 +9,7 @@
     vi Dockerfile
     ```
     
-    ##### Dockerfile
+    ##### [▼ Dockerfile ]
       ```
       FROM ubuntu
       RUN apt-get update
@@ -24,7 +24,7 @@
     vi index.html
     ```
     
-    ##### index.html
+    ##### [▼ index.html ]
       ```
       <html>
       <h1>Dockerfile Test</h1>
