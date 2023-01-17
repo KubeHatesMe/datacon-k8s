@@ -37,31 +37,33 @@
     ```
     docker build -t my-nginx .   # docker build -t <이미지 이름> .
     ```
-    [build-image]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/build-image.png?raw=true)
     
     
 4. 생성된 image 확인
     ```
     docker images
     ```
-    [docker-images]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-images.png?raw=true)
     
 
 5. 컨테이너 생성 
     ```
     docker run -d --name my-nginx-container -p 8080:80 my-nginx   #docker run -d --name <컨테이너 이름> -p <포트연결> <이미지 이름>
     ```
-    [docker-run]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-run.png?raw=true)
+
     
 6. 컨테이너 조회
     ```
     docker ps
     ```
-    [docker-ps]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-ps.png?raw=true)
     
 7. 웹페이지 접속
     브라우저를 열어 localhost:8080 으로 접속
-    [dockerfile-nginx-web]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/dockerfile-nginx-web.png?raw=true)
+    
 
 
 ### 동작하는 컨테이너에 접속하여 index.html 페이지 수정하고, 이를 Docker image로 만들기
@@ -70,7 +72,7 @@
     ```
     docker exec my-nginx-container bash  #docker exec <컨테이너 이름 or 컨테이너 id> bash
     ```
-    [docker-exec]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-exec.png?raw=true)
     
 2. index.html 수정
     (1) index.html 조회
@@ -103,13 +105,15 @@
     ```
     docker commit my-nginx-container my-nginx:2.0
     ```
-    [docker commit]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-commit.png?raw=true)
+
 
 4. docker image 조회
     ```
     docker images
     ```
-    [docker-images-ver2]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-images-ver2.png?raw=true)
+   
 
 ### Docker image를 Docker hub에 올리기(push)
 1. docker hub에 올리기
@@ -117,18 +121,20 @@
         ```
         docker login
         ```
-        [docker-login]
+        ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-login.png?raw=true)
 
     (2) docker tag & push
         ```
         docker tag my-nginx:2.0 kubehatesme/my-nginx:2.0
         docker push kubehatesme/my-nginx:2.0
         ```
-        [docker-tag-push]
+        ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-tag-push.png?raw=true)
+        
 
 2. docker hub 확인
     이미지가 잘 올라갔나 확인
-    [docker-hub-my-nginx-pushed]
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-hub-my-nginx-pushed.png?raw=true)
+    
 
 ### Docker hub에 올린 image를 받아와(pull) index.html 수정사항 반영되었는지 확인하기
 1. 올라간 이미지 pull해서 localhost:8080하면 잘 표출되는지 보기!
