@@ -179,21 +179,3 @@ docker run -d --name my-nginx-container2 -p 8000:80 kubehatesme/my-nginx:2.0
 변경사항이 잘 반영되었는지 
 ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-web2.png?raw=true)
     
-
-
-### 실습
----
-(helm은 이미 설치되어있다는 가정 하에 진행)
-1. Istio 다운로드 및 설치
-    ```
-    curl -L https://istio.io/downloadIstio | sh -
-    cd istio-1.16.1
-    export PATH=$PWD/bin:$PATH
-    
-    istioctl install --set profile=demo -y
-    
-    kubectl label namespace default istio-injection=enabled   # 앱 배포할 때 자동으로 envoy sidecar proxy 
-                                                              # 추가되도록 namespace label 추가                     
-    ```
-    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/istio-install.png?raw=true)
-    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/istio-inject.png?raw=true)
