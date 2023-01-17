@@ -142,9 +142,34 @@
     
 
 ### Docker hub에 올린 image를 받아와(pull) index.html 수정사항 반영되었는지 확인하기
-1. 올라간 이미지 pull해서 localhost:8080하면 잘 표출되는지 보기!
-    기존꺼랑 충돌날 수 있으니까 기존 컨테이너 삭제하고 진행하기
+0. 사전 준비  
 
+    (1) my-nginx:2.0 이미지를 생성하면서 이미 해당 이미지를 갖고 있으므로, kubehatesme/my-nginx:2.0 이미지 삭제
+    ```
+    docker rmi kubehatesme/my-nginx:2.0  # 이미지 삭제
+    docker images   # 이미지 삭제 조회
+    ```
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-rmi.png?raw=true)
+    
+2. Docker hub에 올린 이미지 받아오기
+    ```
+    docker pull kubehatesme/my-nginx:2.0
+    docker images    #이미지 조회
+    ```
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-pull-images.png?raw=true)
+    
+3. 이미지 사용하여 컨테이너 실행
+    ```
+    docker run -d --name my-nginx-container2 -p 8000:80 kubehatesme/my-nginx:2.0
+    # 8080포트는 기존 컨테이너가 사용 중이므로 다른 포트인 8000번 포트 사용
+    ```
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-run-ver2.png?raw=true)
+   
+    
+4. 브라우저 열어 localhost:8000에 접속
+    변경사항이 잘 반영되었는지 
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-web2.png?raw=true)
+    
 
 
 ### 실습
