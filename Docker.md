@@ -75,31 +75,33 @@
     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-exec.png?raw=true)
     
 2. index.html 수정
+
     (1) index.html 조회
-        ```
-        cd var/www/html
-        cat index.html
-        ```
-
-    (2) index.html 수정
-        ```
-        #vi 설치
-        apt-get update
-        apt-get install vim
-
-        #html파일 수정
-        vi index.html
-        ```
+    ```
+    cd var/www/html
+    cat index.html
+    ```
         
-        [▼ index.html ]
-        ```
-        <html>
-        <h1>Dockerfile Test Ver.2</h1>
-        <h2>Hello 2023!</h2>
-          <p>May 2023 be an extraordinary year!</p>
-          <p>Wishing you lots of love and laughter today<p>
-        </html>
-        ```
+        
+    (2) index.html 수정  
+    ```
+    #vi 설치
+    apt-get update
+    apt-get install vim
+
+    #html파일 수정
+    vi index.html
+    ```
+        
+    [▼ index.html ]
+    ```
+    <html>
+    <h1>Dockerfile Test Ver.2</h1>
+    <h2>Hello 2023!</h2>
+      <p>May 2023 be an extraordinary year!</p>
+      <p>Wishing you lots of love and laughter today<p>
+    </html>
+    ```
 
 3. 현재 container 상태를 image로 만들기
     ```
@@ -116,19 +118,22 @@
    
 
 ### Docker image를 Docker hub에 올리기(push)
-1. docker hub에 올리기
+1. docker hub에 올리기  
+
+
     (1) docker hub 로그인
-        ```
-        docker login
-        ```
-        ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-login.png?raw=true)
+    ```
+    docker login
+    ```
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-login.png?raw=true)
+
 
     (2) docker tag & push
-        ```
-        docker tag my-nginx:2.0 kubehatesme/my-nginx:2.0
-        docker push kubehatesme/my-nginx:2.0
-        ```
-        ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-tag-push.png?raw=true)
+    ```
+    docker tag my-nginx:2.0 kubehatesme/my-nginx:2.0
+    docker push kubehatesme/my-nginx:2.0
+    ```
+    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/docker-tag-push.png?raw=true)
         
 
 2. docker hub 확인
