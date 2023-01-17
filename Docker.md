@@ -45,59 +45,93 @@
     docker images
     ```
     [docker-images]
+    
 
-5. 컨테이너 생성  docker run -d --name my-nginx-container -p 8080:80 my-nginx   #docker run -d --name <컨테이너 이름> -p <포트연결> <이미지 이름>
-[docker-run]
-6. 컨테이너 조회 docker ps
-[docker-ps]
+5. 컨테이너 생성 
+    ```
+    docker run -d --name my-nginx-container -p 8080:80 my-nginx   #docker run -d --name <컨테이너 이름> -p <포트연결> <이미지 이름>
+    ```
+    [docker-run]
+    
+6. 컨테이너 조회
+    ```
+    docker ps
+    ```
+    [docker-ps]
+    
 7. 웹페이지 접속
-localhost:8080
-[dockerfile-nginx-web]
-8. 컨테이너 접속 docker exec my-nginx-container bash  #docker exec <컨테이너 이름 or 컨테이너 id> bash
-[docker-exec]
-9. index.html 수정
-[index.html 조회]
-cd var/www/html
-cat index.html
+    브라우저를 열어 localhost:8080 으로 접속
+    [dockerfile-nginx-web]
 
-[index.html 수정]
-#vi 설치
-apt-get update
-apt-get install vim
 
-#html파일 수정
-vi index.html
+### 동작하는 컨테이너에 접속하여 index.html 페이지 수정하고, 이를 Docker image로 만들기
+---
+1. 컨테이너 접속
+    ```
+    docker exec my-nginx-container bash  #docker exec <컨테이너 이름 or 컨테이너 id> bash
+    ```
+    [docker-exec]
+    
+2. index.html 수정
+    (1) index.html 조회
+        ```
+        cd var/www/html
+        cat index.html
+        ```
 
-<html>
-<h1>Dockerfile Test Ver.2</h1>
-<h2>Hello 2023!</h2>
-  <p>May 2023 be an extraordinary year!</p>
-  <p>Wishing you lots of love and laughter today<p>
-</html>
+    (2) index.html 수정
+        ```
+        #vi 설치
+        apt-get update
+        apt-get install vim
 
-10. 현재 container 상태를 image로 만들기
-docker commit my-nginx-container my-nginx:2.0
-[docker commit]
+        #html파일 수정
+        vi index.html
+        ```
+        
+        [▼ index.html ]
+        ```
+        <html>
+        <h1>Dockerfile Test Ver.2</h1>
+        <h2>Hello 2023!</h2>
+          <p>May 2023 be an extraordinary year!</p>
+          <p>Wishing you lots of love and laughter today<p>
+        </html>
+        ```
 
-11. docker image 조회
-docker images
-[docker-images-ver2]
+3. 현재 container 상태를 image로 만들기
+    ```
+    docker commit my-nginx-container my-nginx:2.0
+    ```
+    [docker commit]
 
-12. docker hub에 올리기
-#docker hub 로그인
-docker login
-[docker-login]
+4. docker image 조회
+    ```
+    docker images
+    ```
+    [docker-images-ver2]
 
-# docker tag & push
-docker tag my-nginx:2.0 kubehatesme/my-nginx:2.0
-docker push kubehatesme/my-nginx:2.0
-[docker-tag-push]
+### Docker image를 Docker hub에 올리기(push)
+1. docker hub에 올리기
+    (1) docker hub 로그인
+        ```
+        docker login
+        ```
+        [docker-login]
 
-13. docker hub 확인
-이미지가 잘 올라갔나 확인
-[docker-hub-my-nginx-pushed]
+    (2) docker tag & push
+        ```
+        docker tag my-nginx:2.0 kubehatesme/my-nginx:2.0
+        docker push kubehatesme/my-nginx:2.0
+        ```
+        [docker-tag-push]
 
-14. 올라간 이미지 pull해서 localhost:8080하면 잘 표출되는지 보기!
+2. docker hub 확인
+    이미지가 잘 올라갔나 확인
+    [docker-hub-my-nginx-pushed]
+
+### Docker hub에 올린 image를 받아와(pull) index.html 수정사항 반영되었는지 확인하기
+1. 올라간 이미지 pull해서 localhost:8080하면 잘 표출되는지 보기!
     기존꺼랑 충돌날 수 있으니까 기존 컨테이너 삭제하고 진행하기
 
 
