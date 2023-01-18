@@ -293,8 +293,10 @@ Minikube를 쓸까..
 
     [voting-app 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/voting-app.md)   
 
+7. Ingress
+    [ingress 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/ingress.md)   
 
-7. [advanced] Istio - bookinfo - Service mesh (https://bcho.tistory.com/1297)
+8. [advanced] Istio - bookinfo - Service mesh (https://bcho.tistory.com/1297)
 
     [Istio - bookinfo 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Istio-bookinfo.md)
 
