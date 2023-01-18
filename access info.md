@@ -244,7 +244,7 @@ Minikube를 쓸까..
           volumes:
           - name: shared-data
             hostPath:
-              path: /home/(Username)/vol-mount  
+              path: /home/hy/vol-mount  #/home/(Username)/vol-mount
               type: Directory
 
     ---
