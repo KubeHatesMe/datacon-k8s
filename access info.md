@@ -196,6 +196,13 @@ Minikube를 쓸까..
 
 3. Volume
 
+    * if, minikube로 실행한 경우, 기존 minikube 클러스터는 삭제하고 (minikube delete) 마운트 명령어를 써서 minikube를 시작해야함.
+      ```
+      minikube start --mount --mount-string="/home/(Username)/vol-mount:/home/docker/vol-mount"
+      # "(source Directory - ex. 로컬 디렉토리):(target Directory - minikube 내 디렉토리)
+      ```
+      또한, deployment yaml 파일의 hostPath를 마운트한 minikube directory (/home/docker/vol-mount)로 바꿔주어야 함.
+
     (1) hostpath로 사용할 경로 생성
         Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
     ```
@@ -258,13 +265,6 @@ Minikube를 쓸까..
       selector:
         app: nginx
     ```   
-    
-    * if, minikube로 실행한 경우, 기존 minikube 클러스터는 삭제하고 (minikube delete) 마운트 명령어를 써서 minikube를 시작해야함.
-      ```
-      minikube start --mount --mount-string="/home/(Username)/vol-mount:/home/docker/vol-mount"
-      # "(source Directory - ex. 로컬 디렉토리):(target Directory - minikube 내 디렉토리)
-      ```
-      또한, deployment yaml 파일의 hostPath를 마운트한 minikube directory (/home/docker/vol-mount)로 바꿔주어야 함.
     
     (4) Deployment, Service 배포
     ```
