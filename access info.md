@@ -197,6 +197,7 @@ Minikube를 쓸까..
 3. Volume
 
     * if, minikube로 실행한 경우, 기존 minikube 클러스터는 삭제하고 (minikube delete) 마운트 명령어를 써서 minikube를 시작해야함.
+      로컬에 마운트할 디렉토리 (여기선 /home/hy/vol-mount) 만들고 
       ```
       minikube start --mount --mount-string="/home/(Username)/vol-mount:/home/docker/vol-mount"
       # "(source Directory - ex. 로컬 디렉토리):(target Directory - minikube 내 디렉토리)
@@ -207,6 +208,7 @@ Minikube를 쓸까..
         Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
     ```
     sudo mkdir vol-mount
+    #minikube인 경우 위 마운트 명령어로 이미 minikube 내에 디렉토리가 생성됨
     ```   
     
     (2) 만든 경로에 index.html 파일 생성 및 확인
@@ -244,7 +246,7 @@ Minikube를 쓸까..
           volumes:
           - name: shared-data
             hostPath:
-              path: /home/hy/vol-mount  #/home/(Username)/vol-mount
+              path: /home/docker/vol-mount 
               type: Directory
 
     ---
