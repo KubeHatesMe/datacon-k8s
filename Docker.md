@@ -95,7 +95,7 @@ apt-get install vim
 #html파일 수정
 vi index.html
 ```
-
+(ver2 이미 올라가 있어서 ver3로 해보기)
 [▼ index.html ]
 ```
 <html>
@@ -107,6 +107,7 @@ vi index.html
 ```
 
 **3. 현재 container 상태를 image로 만들기**
+버전 3.0으로 하기
 ```
 docker commit my-nginx-container my-nginx:2.0
 ```
@@ -135,6 +136,7 @@ docker login
 
 
 (2) docker tag & push
+(2.0 이미 있으니까 3.0으로 해보기
 ```
 docker tag my-nginx:2.0 kubehatesme/my-nginx:2.0
 docker push kubehatesme/my-nginx:2.0
