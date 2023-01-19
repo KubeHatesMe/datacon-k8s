@@ -75,3 +75,6 @@ curl hello-world.info  # verson:1.0.0
 curl hello-world.info/v2   # version:2.0.0
 ```
 ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/ingress-result.PNG?raw=true)
+
+
+### 실습 끝나면 /etc/hosts 원상 복구 시켜주기
