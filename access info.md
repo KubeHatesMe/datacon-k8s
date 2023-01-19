@@ -47,6 +47,7 @@ Minikube를 쓸까..
     - 기본 namespace 변경
     ```
     kubectl config set-context --current --namespace=<namespace명>
+    kubectl config view --minify | grep namespace    #현재 속해있는 namespace 확인
     ```
 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - pod 생성하기  
