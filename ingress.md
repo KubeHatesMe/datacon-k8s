@@ -1,6 +1,7 @@
 ## Ingress 실습
 ---
-1. Ingress controller 설치하기 (minikube 환경)
+1. Ingress controller 설치하기
+1-1. minikube환경일 때
 ```
 minikube addons enable ingress   # nginx-ingress-controller 설치
 kubectl get namespaces    # nginx-ingress-controller가 설치된 namespace 확인
@@ -8,6 +9,24 @@ kubectl config set-context --current --namespace=ingress-nginx   # 기본 namesp
 ```
 ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/ingress-addon-change-ns.PNG?raw=true)
 
+1-2. Cluster환경일 때
+```
+# helm 설치
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
+# nginx ingress controller 설치
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+kubectl create ns ingress-nginx
+helm repo update
+helm search repo ingress-nginx
+helm install ingress-nginx ingress-nginx/ingress-nginx -n ingress-nginx
+
+# 확인
+kubectl get pod -n ingress-nginx
+kubectl get svc -n ingress-nginx
+```
 
 2. 첫 번째 app 배포하기
 ```
