@@ -24,7 +24,6 @@
         
         
 ## 1. 기본 명령어 실습
-  - 조회하기 : ```kubectl get <조회할 objeect>```
     ```
     kubectl get namespace   # namespace 조회
     kubectl get nodes   # 클러스터를 구성하는 node들 조회
