@@ -1,13 +1,16 @@
 # 실습 환경 접속 방법
   (1) Putty 열어 Hostname(or Ip address)에 ```centos@210.104.76.192``` / Port에 ```30001``` 입력
-   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_ip.JPG?raw=true)
+   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_ip.JPG?raw=true)  
+   
   (2) 좌측 메뉴바에서 Connection 아래 SSH > Auth 클릭 후, ```Browse..``` 버튼을 눌러 key 파일 가져오기
    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_key.JPG?raw=true)
   
   
 
-##### Kubernetes 실습 가이드
-###### EC2로 클러스터 만들고, namespace로 구분하는 방식으로! 도커 이미지는 미리 github에 올려놓기
+# Kubernetes 실습 가이드
+  * Cluster 구성
+     - Master Node 1대, Worker Node 2대
+     - KT Cloud Server 사용
 
 1. 기본적인 명령어 사용
   - namespace 구분
