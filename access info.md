@@ -21,6 +21,8 @@
       |이승우 부장님|sw|
       |서동희 차장님|dh|
       |이영주 차장님|yj|
+      
+## 기본 명령어 실습
   - namespace 구분
   - pod 확인 (예시로 미리 생성해놓기)
     - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
