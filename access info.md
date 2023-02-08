@@ -1,4 +1,5 @@
-# 실습 환경 접속 방법
+# 실습 환경 접속 방법 #
+
   (1) Putty 열어 Hostname(or Ip address)에 ```centos@210.104.76.192``` / Port에 ```30001``` 입력
    ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_ip.JPG?raw=true)  
    
@@ -8,11 +9,22 @@
   
 
 # Kubernetes 실습 가이드
-  * Cluster 구성
+  * **Cluster 구성**
      - Master Node 1대, Worker Node 2대
-     - KT Cloud Server 사용
-
-1. 기본적인 명령어 사용
+     - KT Cloud Server 사용  
+     
+  * **Namespace 할당**
+     - 강인균 팀장님:   **ik**
+     - 박경규 부장님:   **kk**
+     - 이승우 부장님:   **sw**
+     - 서동희 차장님:   **dh**
+     - 이영주 차장님:   **yj**
+     |제목|내용|설명|
+     |------|---|---|
+     |테스트1|테스트2|테스트3|
+     |테스트1|테스트2|테스트3|
+     |테스트1|테스트2|테스트3|
+## 1. 기본적인 명령어 사용
   - namespace 구분
   - pod 확인 (예시로 미리 생성해놓기)
     - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
@@ -42,7 +54,7 @@
     kubectl config set-context --current --namespace=<namespace명>
     kubectl config view --minify | grep namespace    #현재 속해있는 namespace 확인
     ```
-2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
+## 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - pod 생성하기  
 
 
