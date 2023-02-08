@@ -247,8 +247,8 @@
               - containerPort: 80
     ```
   - Deployment 생성하기
-  ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로) >> 기존 위에서 생성한 rs 놔둔 채로 아래 deployment 배포하면, 기존 rs는 desired가 0으로 되어 기존 pod들도 없어지고, 아래 deployment에 의한 pod들만 생겨남
-    ###### [nginx-dp.yaml]
+    - ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로) >> 기존 위에서 생성한 rs 놔둔 채로 아래 deployment 배포하면, 기존 rs는 desired가 0으로 되어 기존 pod들도 없어지고, 아래 deployment에 의한 pod들만 생겨남  
+     ###### [nginx-dp.yaml]
     ```
     apiVersion: apps/v1
     kind: #here                  #Object 종류
@@ -271,10 +271,10 @@
             image: nginx:1.14.0
             ports:
             - containerPort: 80
+    ```    
+    
+    ###### [nginx-dp-ans.yaml]  
     ```  
-  
-    ###### [nginx-dp-ans.yaml]
-    ```
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -296,7 +296,7 @@
             image: nginx:1.14.0
             ports:
             - containerPort: 80
-    ```
+    ```  
 
 3. Volume
 
@@ -324,6 +324,7 @@
     
     (3) Deployment(hostPath Volume 지정)와 Service 배포
     ###### [nginx-dp-vol.yaml]
+    
     ```
     apiVersion: apps/v1
     kind: Deployment
