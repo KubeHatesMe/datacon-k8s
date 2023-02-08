@@ -167,7 +167,11 @@
     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/svc-nodeip.JPG?raw=true)  
     
     
-    브라우저 열어 (internal-ip 주소):(nodeport값) 으로 접속하여 출력 화면 확인
+    브라우저 열어 (internal-ip 주소):(nodeport값) 으로 접속하여 출력 화면 확인  
+    
+    **w3m 사용할 경우, ```$w3m http://(internnal-ip 주소):(nodeport값)``` 실행**  
+    
+    
     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/nginx-web.JPG?raw=true)
 
     
