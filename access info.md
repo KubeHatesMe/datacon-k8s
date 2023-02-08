@@ -21,9 +21,20 @@
       |이승우 부장님|sw|
       |서동희 차장님|dh|
       |이영주 차장님|yj|
-      
-## 기본 명령어 실습
-  - namespace 구분
+        
+        
+## 1. 기본 명령어 실습
+  - 조회하기 : ```kubectl get <조회할 objeect>```
+    ```
+    kubectl get namespace   # namespace 조회
+    kubectl get nodes   # 클러스터를 구성하는 node들 조회
+    kubectl get nodes -o wide   # 클러스터를 구성하는 node 정보를 조금 더 자세히 조회
+    kubectl get pods -A   # 모든 namespace에 있는 pod들 조회
+    kubectl get pods -n <namespace명>   # 특정 namespace에 있는 pod들 조회
+    kubectl describe pod nginx-default -n default   # default namespace에 있는 nginx-default pod에 대한 정보를 자세히 조회
+    kubectl get service   # 현재 namespace에 있는 service를 조회
+    kubectl delete pod <pod명> -n <namespace명>   #  특정 namespace에 있는 이름이 <pod명>인 pod를 삭제
+    ```
   - pod 확인 (예시로 미리 생성해놓기)
     - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
     - 각 namespace 별 pod 확인
