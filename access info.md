@@ -74,6 +74,23 @@
     ###### [nginx-pod.yaml]
     ```
     apiVersion: v1
+    kind: #here          #Object종류
+    metadata:
+      name: #here        #Pod의 이름
+      labels:            #labels 값이
+        app: #here       #Service의 selector 값과 일치해야 함
+    spec:
+      containers:
+      - name: #here     #container의 이름
+        image: #here    #사용할 image
+        ports:
+        - containerPort: 80
+
+    ```
+    
+    ###### [nginx-pod-ans.yaml]
+    ```
+    apiVersion: v1
     kind: Pod
     metadata:
       name: my-nginx
