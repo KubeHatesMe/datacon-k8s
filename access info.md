@@ -197,6 +197,33 @@
   ###### [nginx-rs.yaml]
   ```
   apiVersion: apps/v1
+  kind: #here                #Object 종류
+  metadata:
+    name: my-nginx-rs
+    labels:
+      app: nginx
+  spec:
+    replicas: #here          #Replicas 수
+    selector:
+      matchLabels:
+        app: #here
+    template:
+       metadata:
+          name: my-nginx
+          labels:             #labels 값이
+            app: #here        #Replicaset의 selector 값과 일치해야 함
+       spec:
+          containers:
+          - name: my-nginx
+            image: nginx:1.14.0
+            ports:
+            - containerPort: 80
+  ```  
+  
+  
+  ###### [nginx-rs-ans.yaml]
+  ```
+  apiVersion: apps/v1
   kind: ReplicaSet
   metadata:
     name: my-nginx-rs
@@ -211,7 +238,7 @@
        metadata:
           name: my-nginx
           labels:             # labels 값이
-            app: nginx        # service의 selector 값과 일치해야 함 
+            app: nginx        # Replicaset의 selector 값과 일치해야 함 
        spec:
           containers:
           - name: my-nginx
