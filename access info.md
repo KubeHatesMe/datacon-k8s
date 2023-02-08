@@ -1,20 +1,10 @@
 # 실습 환경 접속 방법
-#### AWS 접속 계정
-- **계정ID**:
-- **사용자 이름**:
-- **암호**:
-
-Minikube를 쓸까..
-에러나면 delete 했다가 다시 만들면 돼서 편할 거 같긴 한데..
-
-#### VM 접속
-- (이름) : (ip주소)
-- (이름) : (ip주소)
-- (이름) : (ip주소)
-- (이름) : (ip주소)
-- (이름) : (ip주소)
-- (이름) : (ip주소)
-- (이름) : (ip주소)
+  (1) Putty 열어 Hostname(or Ip address)에 ```centos@210.104.76.192``` / Port에 ```30001``` 입력
+   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_ip.JPG?raw=true)
+  (2) 좌측 메뉴바에서 Connection 아래 SSH > Auth 클릭 후, ```Browse..``` 버튼을 눌러 key 파일 가져오기
+   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_key.JPG?raw=true)
+  
+  
 
 ##### Kubernetes 실습 가이드
 ###### EC2로 클러스터 만들고, namespace로 구분하는 방식으로! 도커 이미지는 미리 github에 올려놓기
