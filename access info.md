@@ -194,15 +194,15 @@
       ⊙ *ExternalName*
       
   - Replica Set 생성하기
-  ###### [nginx-rs.yaml]
-  ```
-  apiVersion: apps/v1
-  kind: #here                #Object 종류
-  metadata:
+    ###### [nginx-rs.yaml]
+    ```
+    apiVersion: apps/v1
+    kind: #here                #Object 종류
+    metadata:
     name: my-nginx-rs
     labels:
       app: nginx
-  spec:
+    spec:
     replicas: #here          #Replicas 수
     selector:
       matchLabels:
@@ -218,85 +218,85 @@
             image: nginx:1.14.0
             ports:
             - containerPort: 80
-  ```  
+    ```  
   
   
-  ###### [nginx-rs-ans.yaml]
-  ```
-  apiVersion: apps/v1
-  kind: ReplicaSet
-  metadata:
-    name: my-nginx-rs
-    labels:
-      app: nginx
-  spec:
-    replicas: 3
-    selector:
-      matchLabels:
+    ###### [nginx-rs-ans.yaml]
+    ```
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    metadata:
+      name: my-nginx-rs
+      labels:
         app: nginx
-    template:
-       metadata:
-          name: my-nginx
-          labels:             # labels 값이
-            app: nginx        # Replicaset의 selector 값과 일치해야 함 
-       spec:
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+         metadata:
+            name: my-nginx
+            labels:             # labels 값이
+              app: nginx        # Replicaset의 selector 값과 일치해야 함 
+         spec:
+            containers:
+            - name: my-nginx
+              image: nginx:1.14.0
+              ports:
+              - containerPort: 80
+    ```
+  - Deployment 생성하기
+  ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로) >> 기존 위에서 생성한 rs 놔둔 채로 아래 deployment 배포하면, 기존 rs는 desired가 0으로 되어 기존 pod들도 없어지고, 아래 deployment에 의한 pod들만 생겨남
+    ###### [nginx-dp.yaml]
+    ```
+    apiVersion: apps/v1
+    kind: #here                  #Object 종류
+    metadata:
+      name: my-nginx-deployment
+      labels:
+        app: nginx
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
           containers:
-          - name: my-nginx
+          - name: nginx
             image: nginx:1.14.0
             ports:
             - containerPort: 80
-  ```
-  - Deployment 생성하기
-  ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로) >> 기존 위에서 생성한 rs 놔둔 채로 아래 deployment 배포하면, 기존 rs는 desired가 0으로 되어 기존 pod들도 없어지고, 아래 deployment에 의한 pod들만 생겨남
-  ###### [nginx-dp.yaml]
-  ```
-  apiVersion: apps/v1
-  kind: #here                  #Object 종류
-  metadata:
-    name: my-nginx-deployment
-    labels:
-      app: nginx
-  spec:
-    replicas: 3
-    selector:
-      matchLabels:
-        app: nginx
-    template:
-      metadata:
-        labels:
-          app: nginx
-      spec:
-        containers:
-        - name: nginx
-          image: nginx:1.14.0
-          ports:
-          - containerPort: 80
-  ```  
+    ```  
   
-  ###### [nginx-dp-ans.yaml]
-  ```
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: my-nginx-deployment
-    labels:
-      app: nginx
-  spec:
-    replicas: 3
-    selector:
-      matchLabels:
+    ###### [nginx-dp-ans.yaml]
+    ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-nginx-deployment
+      labels:
         app: nginx
-    template:                  
-      metadata:
-        labels:
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
           app: nginx
-      spec:
-        containers:
-        - name: nginx
-          image: nginx:1.14.0
-          ports:
-          - containerPort: 80
-  ```
+      template:                  
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+          - name: nginx
+            image: nginx:1.14.0
+            ports:
+            - containerPort: 80
+    ```
 
 3. Volume
 
