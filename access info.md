@@ -121,9 +121,24 @@
 
 
     (1) yaml 파일 작성  
-    
-    
     ###### [nginx-svc.yaml]
+    ```
+    apiVersion: v1
+    kind: #here           #Object 종류
+    metadata:
+      name: my-nginx-svc         #Service 이름
+    spec:
+      selector:           # Service의 대상이 되는 오브젝트의
+        app: #here        # label값과 일치해야 함
+      type: #here         # Service type
+      ports:
+      - nodePort: #here   # 외부 접속 시 사용하는 port 번호, 미 설정시 3만번대에서 자동 할당
+        port: 8080        # Cluster 내부에서 사용하는 service 객체의 port 번호
+        targetPort: 80    # service-> pod 로 전달 시 사용하는 port 번호
+        protocol: TCP
+    ```
+    
+    ###### [nginx-svc-ans.yaml]
     ```
     apiVersion: v1
     kind: Service
