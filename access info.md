@@ -23,7 +23,8 @@
       |이영주 차장님|yj|
         
         
-## 1. 기본 명령어 실습
+## 1. 기본 명령어 실습  
+  - get, describe, delete
     ```
     kubectl get namespace   # namespace 조회
     kubectl get nodes   # 클러스터를 구성하는 node들 조회
@@ -34,6 +35,7 @@
     kubectl get service   # 현재 namespace에 있는 service를 조회
     kubectl delete pod <pod명> -n <namespace명>   #  특정 namespace에 있는 이름이 <pod명>인 pod를 삭제
     ```
+    
   - pod 확인 (예시로 미리 생성해놓기)
     - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
     - 각 namespace 별 pod 확인
