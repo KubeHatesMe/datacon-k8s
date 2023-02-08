@@ -322,14 +322,14 @@
     (1) hostpath로 사용할 경로 생성
         Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
     ```
-    sudo mkdir vol-mount
+    sudo mkdir <이니셜 ex. hy>/vol-mount
     #minikube인 경우 위 마운트 명령어로 이미 minikube 내에 디렉토리가 생성됨
     ```   
     
     (2) 만든 경로에 index.html 파일 생성 및 확인
     ```
-    sudo sh -c "echo 'Hello from Kubernetes storage' > vol-mount/index.html"
-    cat vol-mount/index.html #결과: Hello from Kubernetes stroage
+    sudo sh -c "echo 'Hello from Kubernetes storage' > <이니셜>/vol-mount/index.html"
+    cat <이니셜>/vol-mount/index.html #결과: Hello from Kubernetes stroage
     ```
     
     
