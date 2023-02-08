@@ -111,7 +111,7 @@
     **방법2. Command Line Tool 활용**
     ```
     # kubectl run <pod명> --image=<image명> --port=<port번호>
-    kubectl run nginx-pod --image=nginx --port=80
+    kubectl run nginx-pod --image=nginx --port=80 -n <namespace명>
     ```
     - 결과 조회
     ```
