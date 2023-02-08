@@ -14,17 +14,13 @@
      - KT Cloud Server 사용  
      
   * **Namespace 할당**
-     - 강인균 팀장님:   **ik**
-     - 박경규 부장님:   **kk**
-     - 이승우 부장님:   **sw**
-     - 서동희 차장님:   **dh**
-     - 이영주 차장님:   **yj**
-     |제목|내용|설명|
-     |------|---|---|
-     |테스트1|테스트2|테스트3|
-     |테스트1|테스트2|테스트3|
-     |테스트1|테스트2|테스트3|
-## 1. 기본적인 명령어 사용
+      |성함|namespace|
+      |------|:---:|
+      |강인균 팀장님|ik|
+      |박경규 부장님|kk|
+      |이승우 부장님|sw|
+      |서동희 차장님|dh|
+      |이영주 차장님|yj|
   - namespace 구분
   - pod 확인 (예시로 미리 생성해놓기)
     - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
