@@ -24,7 +24,7 @@
         
         
 ## 1. 기본 명령어 실습  
-  - get, describe, delete
+  - **get, describe, delete**
     ```
     kubectl get namespace   # namespace 조회
     kubectl get nodes   # 클러스터를 구성하는 node들 조회
@@ -65,13 +65,13 @@
     kubectl config view --minify | grep namespace    #현재 속해있는 namespace 확인
     ```
 ## 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
-  - pod 생성하기  
+  - **pod 생성하기**
 
 
     **방법1. yaml 파일 활용**   
     
     
-    (1) yaml 파일 작성  
+    **(1) yaml 파일 작성**  
     ###### [nginx-pod.yaml]
     ```
     apiVersion: v1
@@ -104,9 +104,9 @@
         ports:
         - containerPort: 80
     ```
-    (2) pod 배포
+    **(2) pod 배포**
     ```
-    kubectl apply -f nginx-pod.yaml
+    kubectl apply -f nginx-pod.yaml -n <namespace명>
     ```
     **방법2. Command Line Tool 활용**
     ```
@@ -115,12 +115,12 @@
     ```
     - 결과 조회
     ```
-    kubectl get pods
+    kubectl get pods -n <namespace명>
     ```
-  - Service 생성하기  
+  - **Service 생성하기**  
 
 
-    (1) yaml 파일 작성  
+    **(1) yaml 파일 작성**  
     ###### [nginx-svc.yaml]
     ```
     apiVersion: v1
@@ -155,14 +155,14 @@
         protocol: TCP
 
     ```
-    (2) service 배포
+    **(2) service 배포**
     ```
-    kubectl apply -f nginx-svc.yaml
+    kubectl apply -f nginx-svc.yaml -n <namespace명>
     ```  
     
-    (3) 브라우저 접속 및 확인
+    **(3) 브라우저 접속 및 확인**
     ```
-    kubectl get nodes -o wide # 출력 결과 중 node의 <internal-IP> 값 확인
+    kubectl get nodes -o wide -n <namespace명> # 출력 결과 중 node의 <internal-IP> 값 확인
     ```
     ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/svc-nodeip.JPG?raw=true)  
     
@@ -193,7 +193,7 @@
       
       ⊙ *ExternalName*
       
-  - Replica Set 생성하기
+  - **Replica Set 생성하기**
     ###### [nginx-rs.yaml]
     ```
     apiVersion: apps/v1
@@ -246,7 +246,13 @@
               ports:
               - containerPort: 80
     ```
-  - Deployment 생성하기
+    
+    **ReplicaSet 배포**
+    ```
+    kubectl apply -f nginx-rs.yaml -n <namespace명>
+    ```  
+    
+  - **Deployment 생성하기**
     - ###### cf. Replica Set과 Deployment는 거의 유사한데, Deployment가 Replica Set의 상위 개념으로, Rolling-Update 등 pod 배포 시에 관리를 용이하게 하기 위해 실제 운영에는 Deployment를 더 많이 쓰는 듯함. (어차피 Deployment 배포하면 Replica Set 도 자동 생성되므로) >> 기존 위에서 생성한 rs 놔둔 채로 아래 deployment 배포하면, 기존 rs는 desired가 0으로 되어 기존 pod들도 없어지고, 아래 deployment에 의한 pod들만 생겨남  
      ###### [nginx-dp.yaml]
     ```
@@ -296,6 +302,11 @@
             image: nginx:1.14.0
             ports:
             - containerPort: 80
+    ```  
+    
+    **Deployment 배포**
+    ```
+    kubectl apply -f nginx-dp.yaml -n <namespace명>
     ```  
 
 3. Volume
