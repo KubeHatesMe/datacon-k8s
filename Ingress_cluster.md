@@ -5,6 +5,7 @@
   - 두 개의 웹 앱 배포 (dacon-main, dacon-album)
   - http://dataconsulting.com:<nodeport>로 접속 시, dacon-main으로 연결
   - http://dataconsulting.com:<nodeport>/dacon-album으로 접속 시, dacon-album으로 연결
+  - **동일한 host와 path를 사용하는 ingress는 전체 클러스터 범위에서 중복되면 안 됨 => 실습 1개로만 해야 함**
   
   (0) ingress controller 설치 완료 (Nginx ingress Controller 사용함)
       ingress-nginx-controller service의 NodePort를 31000번으로 설정 (사유: 앱에서 31000번 포트 사용하게끔 만들어놔서)
