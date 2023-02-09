@@ -413,7 +413,8 @@
 
 7. Ingress  
 
-    [ingress 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Ingress_cluster.md)
+    [ingress 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Ingress_cluster.md)  
+    
     [ingress 실습 가이드 - minikube ver.](https://github.com/KubeHatesMe/datacon-k8s/blob/master/ingress.md)   
 
 8. [advanced] Istio - bookinfo - Service mesh (https://bcho.tistory.com/1297)
