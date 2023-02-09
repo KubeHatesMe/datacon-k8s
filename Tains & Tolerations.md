@@ -64,7 +64,7 @@
       ```
       (2) Master Node의 Label 조회
       ```
-      kubectl descirbe node master | grep Labels - A 10 #Labels 이후 10줄까지 출력
+      kubectl describe node master | grep Labels -A 10 #Labels 이후 10줄까지 출력
       #Labels:       beta.kubernetes.io/arch=amd64
       #              beta.kubernetes.io/os=linux
       #              kubernetes.io/arch=amd64
