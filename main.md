@@ -1,10 +1,12 @@
 # 실습 환경 접속 방법 #
 
-  (1) Putty 열어 Hostname(or Ip address)에 ```centos@210.104.76.192``` / Port에 ```30001``` 입력
-   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_ip.JPG?raw=true)  
+  (1) Putty 열어 Hostname(or Ip address)에 ```centos@210.104.76.192``` / Port에 ```30001``` 입력  
+  
+  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_ip.PNG?raw=true)  
    
-  (2) 좌측 메뉴바에서 Connection 아래 SSH > Auth 클릭 후, ```Browse..``` 버튼을 눌러 key 파일 가져오기
-   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_key.JPG?raw=true)
+  (2) 좌측 메뉴바에서 Connection 아래 SSH > Auth 클릭 후, ```Browse..``` 버튼을 눌러 key 파일 가져오기  
+
+  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/putty_key.PNG?raw=true)
   
   
 
