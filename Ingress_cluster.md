@@ -17,7 +17,7 @@
   
   (2) dacon-album 앱을 위한 pod, service 생성
   ```
-  kubectl run dacaon-album --port=80 --image=kubbehatesme/dacon-web:0209 -n <namespace명>    #pod 생성
+  kubectl run dacaon-album --port=80 --image=kubehatesme/dacon-web:0209 -n <namespace명>    #pod 생성
   kubectl expose pod dacon-album --port=80 --type=NodePort     #service 생성
   ```
   
