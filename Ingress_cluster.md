@@ -64,7 +64,7 @@
   kubectl get ingress -o wide   #결과 중 ADDRESS값 확인
   ```
   
-  (6) host 등록
+  (6) host 등록 - (완료)
   ```
   vi /etc/hosts
   # 가장 아랫줄에 <ingress의 ADDRESS> dataconsulting.com 추가
