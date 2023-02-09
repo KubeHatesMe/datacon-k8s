@@ -40,7 +40,7 @@
         - name: my-busybox
           image: busybox:1.28
           command: ['sh', '-c', 'sleep 3600']
-        nodeName: master     #Pod를 올릴 Node의 
+        nodeName: master     #Pod를 올릴 Node의 이름
       ```
       
       (4) Pod 배포하기
