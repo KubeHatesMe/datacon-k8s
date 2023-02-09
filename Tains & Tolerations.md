@@ -102,7 +102,7 @@
       
       (3) Pod 배포하기
       ```
-      kubectl ~~~
+      kubectl apply -f pod-tolerations-nodename.yaml -n <nameespace명>
       ```
     
     
