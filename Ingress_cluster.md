@@ -76,7 +76,7 @@
     - 성공적인 접속 결과  
   
       **[dacon-main]**  
-      ![]()  
+      ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/dacon-main.PNG?raw=true)  
   
       **[dacon-album]**  
-      ![]()
+      ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/dacon-album.PNG?raw=true)
