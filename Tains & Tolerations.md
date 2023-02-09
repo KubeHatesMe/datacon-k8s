@@ -6,8 +6,8 @@
 
 ## Tolerations
 
-- Tolerations 요소
-![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/about_toleration.png?raw=true)
+- Tolerations 요소  
+  ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/about_toleration.PNG?raw=true)
 
 ## Taints & Tolerations 실습
   ### Master Node에 Pod 배포하기
