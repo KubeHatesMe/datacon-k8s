@@ -410,7 +410,8 @@
     
     [ingress 실습 가이드 - minikube ver.](https://github.com/KubeHatesMe/datacon-k8s/blob/master/ingress.md)   
 
-6. Taints & Tolerations
-    [Taints & Tolerations 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Taints & Tolerations.md)
+6. Taints & Tolerations  
+
+    [Taints & Tolerations 실습 가이드](https://github.com/KubeHatesMe/datacon-k8s/blob/master/Tains%20%26%20Tolerations.md)
 
 
