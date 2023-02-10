@@ -1,7 +1,15 @@
 # Taints & Tolerations
 
 ## Taints
-- 정의
+- Taint는 얼룩이라는 뜻
+- Node에 Taint를 설정하여 아무 Pod들이나 할당되지 못하도록 제약을 건다.
+- Taint는 Key=Value:Effect 형태로 설정하며, Effect는 생략 가능하다.
+- Effect 종류
+  - NoSchedule : 기존 실행 중인 Pod는 어쩔수 없고, 앞으로 실행될 Pod에 대해서만 스케쥴링 제한
+  - NoExecute : 앞으로 생성 될 Pod에 대한 스케쥴링을 제한함은 물론, 기존에 해당 Node에 배치된 Pod 모두 방출
+  - PreferNoSchedule : Soft한 룰 / 기존 실행 중인 Pod는 허용하고, 앞으로 생성될 Pod도 스케쥴링되는 것을 선호하진 않지만, 해당 Node 밖에 스케쥴링 될 곳이 없다면 허용해줌
+  
+  ![](https://miro.medium.com/max/1282/1*7e0BwxxNBMrx2J4TQGMjuA.png)
 
 
 ## Tolerations
