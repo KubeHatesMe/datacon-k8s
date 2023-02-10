@@ -14,6 +14,8 @@
 
 ## Tolerations
 
+- Taint라는 장벽을 뚫을 수 있게 해줌
+- key, value, operator, effect 형태이며, operator가 Exists일 경우에 value는 설정하지 않는다.
 - Tolerations 요소  
   ![](https://github.com/KubeHatesMe/datacon-k8s/blob/master/image/about_toleration.PNG?raw=true)
 
