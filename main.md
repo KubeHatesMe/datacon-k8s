@@ -341,7 +341,7 @@
           volumes:
           - name: shared-data
             hostPath:
-              path: /home/docker/vol-mount 
+              path: /home/<Username>/<이니셜>/vol-mount 
               type: Directory
 
     ---
