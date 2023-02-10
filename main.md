@@ -41,7 +41,7 @@
 ## 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
   - **Directory 이동**
     ```
-    cd <이니셜>    # 
+    cd <이니셜>    # ex) cd hy
     ```
 
   - **pod 생성하기**
