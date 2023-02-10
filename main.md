@@ -37,36 +37,13 @@
     kubectl get service   # 현재 namespace에 있는 service를 조회
     kubectl delete pod <pod명> -n <namespace명>   #  특정 namespace에 있는 이름이 <pod명>인 pod를 삭제
     ```
-    
-  - pod 확인 (예시로 미리 생성해놓기)
-    - kubectl get pods, kubectl get pods -o wide, kubectl describe pod (pod name)
-    - 각 namespace 별 pod 확인
-    ```
-    kubectl get pods -n <namespace명>
-    ```
-    - 모든 namespace에 있는 pod 확인
-    ```
-    kubectl get pods --all-namespaces
-    ```
-    - pod 상세 정보 출력
-    ```
-    kubectl get pods -n <namespace명> -o wide
-    ```
-    - node 확인
-    ```
-    kubectl get nodes
-    ```
-    - pod 삭제
-    ```
-    kubectl delete pod <pod명> -n <namespace명>
-    kubectl get pods -n <namespace명> #삭제된 결과 조회
-    ```
-    - 기본 namespace 변경
-    ```
-    kubectl config set-context --current --namespace=<namespace명>
-    kubectl config view --minify | grep namespace    #현재 속해있는 namespace 확인
-    ```
+
 ## 2. 기본 object들 실습 : pod(생성), replicaset, deployment, services
+  - **Directory 이동**
+    ```
+    cd <이니셜>    # 
+    ```
+
   - **pod 생성하기**
 
 
@@ -321,17 +298,17 @@
       ```
       또한, deployment yaml 파일의 hostPath를 마운트한 minikube directory (/home/docker/vol-mount)로 바꿔주어야 함.
 
-    (1) hostpath로 사용할 경로 생성
+    (1) hostpath로 사용할 경로 생성 (<이니셜> 디렉토리에서 작업)
         Worker Node1에 접속하여 셸을 열고 아래 명령어를 실행하여 디렉터리 생성
     ```
-    sudo mkdir <이니셜 ex. hy>/vol-mount
+    sudo mkdir vol-mount
     #minikube인 경우 위 마운트 명령어로 이미 minikube 내에 디렉토리가 생성됨
     ```   
     
     (2) 만든 경로에 index.html 파일 생성 및 확인
     ```
-    sudo sh -c "echo 'Hello from Kubernetes storage' > <이니셜>/vol-mount/index.html"
-    cat <이니셜>/vol-mount/index.html #결과: Hello from Kubernetes stroage
+    sudo sh -c "echo 'Hello from Kubernetes storage' > vol-mount/index.html"
+    cat vol-mount/index.html #결과: Hello from Kubernetes stroage
     ```
     
     
